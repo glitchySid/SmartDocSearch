@@ -10,9 +10,9 @@ router = APIRouter()
 @router.post("/uploadfile/")
 async def upload_file(file: UploadFile):
     try:
-        text = load_text(file.file)
-        splits = split_text(text)
-        _ = create_vector_store(splits)
+        text = await load_text(file.file)
+        splits = await split_text(text)
+        _ = await create_vector_store(splits)
         return {"message": "File uploaded successfully"}
     except Exception as e:
         print(e)
