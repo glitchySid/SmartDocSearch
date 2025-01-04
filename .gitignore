@@ -7,7 +7,7 @@ wheels/
 *.egg-info
 
 .env
-./persistent
+persistent/
 
 # Virtual environments
 .venv
