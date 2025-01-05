@@ -15,7 +15,7 @@ async def give_output(question: str):
     llm = await create_llm()
     retriever = await create_retriever(vectorstore)
     prompt = await load_prompt()
-    rag_chain = create_rag_chain(retriever, prompt, llm)
+    rag_chain = await create_rag_chain(retriever, prompt, llm)
     rag_output = rag_chain.invoke(question)
     print(rag_output)
     return {"output": rag_output}

@@ -8,8 +8,9 @@ from .utils.load_env import load_env
 app = FastAPI()
 
 # Load environment variables
+
 load_env()
 
-# Include the routers from different modules
+
 app.include_router(upload_router)
 app.include_router(output_router)
